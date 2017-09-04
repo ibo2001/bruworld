@@ -24,7 +24,7 @@ function getGridsPosts(){
 
 vc_map(
     array(
-        'name' => __( 'GazaWay Tiles2', 'js_composer' ),
+        'name' => __( 'GazaWay Tiles', 'js_composer' ),
         'base' => 'gazaway_tiles',
         'icon' => 'icon-wpb-images-stack',
         'category' => __( 'Content', 'js_composer' ),
