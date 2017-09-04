@@ -226,3 +226,34 @@ if (!function_exists('latest_post')) {
     }
     add_shortcode('latest_post', 'latest_post');
 }
+
+add_filter( 'mce_buttons_3', 'add_more_buttons' );
+if(!function_exists('add_more_buttons')){
+    function add_more_buttons( $buttons ){
+        $buttons[] = 'fontselect';
+        $buttons[] = 'fontsizeselect';
+        $buttons[] = 'cleanup';
+
+        return $buttons;
+    }
+}
+
+function load_custom_fonts($init) {
+    $font_formats = isset($init['font_formats']) ? $init['font_formats'] : 'Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+
+    $custom_fonts = ';'.'San Francisco Display Black=san_francisco_displayblack;San Francisco Display Bold =san_francisco_displaybold;Steinem Bold Italic=steinembolditalic;Steinem Roman=steinemroman;Steinem Bold=steinembold;Steinem Roman Italic=steinemromanitalic;Steinem Unicode Regular=steinem_unicoderegular';
+
+    $init['font_formats'] = $font_formats . $custom_fonts;
+
+    return $init;
+}
+add_filter('tiny_mce_before_init', 'load_custom_fonts');
+
+
+function load_custom_fonts_frontend() {
+    wp_enqueue_style( 'sanfrancisco1', get_stylesheet_directory_uri() .'/fonts/sanfrancisco1/stylesheet.css' );
+    wp_enqueue_style( 'sanfrancisco2', get_stylesheet_directory_uri() .'/fonts/sanfrancisco2/stylesheet.css' );
+    wp_enqueue_style( 'steinem', get_stylesheet_directory_uri() .'/fonts/steinem/steinem.css' );
+}
+add_action('wp_head', 'load_custom_fonts_frontend');
+add_action('admin_head', 'load_custom_fonts_frontend');
