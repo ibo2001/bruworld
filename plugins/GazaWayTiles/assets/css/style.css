@@ -1,0 +1,13 @@
+.gazaway-tiles-byline-title{
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 20px !important;
+}
+#gazaway_tiles_borderTop {
+    border-top: 10px solid #F6931D;
+    position: relative;
+    left: 25%;
+    top: -5px;
+    width: 50%;
+}

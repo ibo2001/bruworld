@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f37c79c0-3b05-4b11-bd92-31a0662a3e9e" name="utvilking_pckasse.tk" url="http://139.59.190.197">
+        <fileTransfer host="139.59.190.197" port="22" rootFolder="/applications/readxqswvt" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
