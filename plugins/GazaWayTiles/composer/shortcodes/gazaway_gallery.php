@@ -26,10 +26,16 @@ vc_map(
     array(
         'name' => __( 'GazaWay Tiles', 'js_composer' ),
         'base' => 'gazaway_tiles',
-        'icon' => 'icon-wpb-images-stack',
-        'category' => __( 'Content', 'js_composer' ),
+        'icon' => 'vc_icon-vc-media-grid',
+        'category' => 'Gazaway',
         'description' => __( 'Responsive tiles', 'js_composer' ),
         'params' => array(
+            array(
+                'type' => 'textfield',
+                'heading' => __( 'Extra class name', 'js_composer' ),
+                'param_name' => 'el_class',
+                'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
+            ),
             array(
                 'type' => 'textfield',
                 'heading' => __( 'Widget title', 'js_composer' ),
@@ -114,12 +120,7 @@ vc_map(
                 'description' => 'Tile title font size with px',
             ),
 
-            array(
-                'type' => 'textfield',
-                'heading' => __( 'Extra class name', 'js_composer' ),
-                'param_name' => 'el_class',
-                'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' ),
-            ),
+
             array(
                 'type' => 'css_editor',
                 'heading' => __( 'CSS box', 'js_composer' ),

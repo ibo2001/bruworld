@@ -231,8 +231,7 @@ add_filter( 'mce_buttons_3', 'add_more_buttons' );
 if(!function_exists('add_more_buttons')){
     function add_more_buttons( $buttons ){
         $buttons[] = 'fontselect';
-        $buttons[] = 'fontsizeselect';
-        $buttons[] = 'cleanup';
+        $buttons[] = 'styleselect';
 
         return $buttons;
     }
@@ -240,9 +239,35 @@ if(!function_exists('add_more_buttons')){
 
 function load_custom_fonts($init) {
     $font_formats = isset($init['font_formats']) ? $init['font_formats'] : 'Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats';
+    $custom_fonts = ';';
+    $custom_fonts .= "Steinem Bold Italic=steinembolditalic;";
+    $custom_fonts .= "Steinem Roman=steinemroman;";
+    $custom_fonts .= "Steinem Bold=steinembold;";
+    $custom_fonts .= "Steinem Roman Italic=steinemromanitalic;";
+    $custom_fonts .= "Steinem Unicode Regular=steinem_unicoderegular;";
 
-    $custom_fonts = ';'.'San Francisco Display Black=san_francisco_displayblack;San Francisco Display Bold =san_francisco_displaybold;Steinem Bold Italic=steinembolditalic;Steinem Roman=steinemroman;Steinem Bold=steinembold;Steinem Roman Italic=steinemromanitalic;Steinem Unicode Regular=steinem_unicoderegular';
+    $custom_fonts .= "San Francisco Display Black=san_francisco_displayblack;";
+    $custom_fonts .= "San Francisco Display Bold=san_francisco_displaybold;";
+    $custom_fonts .= "San Francisco Display Heavy=san_francisco_displayheavy;";
+    $custom_fonts .= "San Francisco Display Light=san_francisco_displaylight;";
+    $custom_fonts .= "San Francisco Display Medium=san_francisco_displaymedium;";
+    $custom_fonts .= "San Francisco Display Regular=san_francisco_displayregular;";
+    $custom_fonts .= "San Francisco Display Semibold=san_francisco_displaysemibold;";
+    $custom_fonts .= "San Francisco Display Thin=san_francisco_displaythin;";
+    $custom_fonts .= "San Francisco Display Ultralight=san_francisco_displayultraLt;";
 
+    $custom_fonts .= "San Francisco Text Bold=san_francisco_textbold;";
+    $custom_fonts .= "San Francisco Text Bold Italic=san_francisco_textbold_italic;";
+    $custom_fonts .= "San Francisco Text Heavy=san_francisco_textheavy;";
+    $custom_fonts .= "San Francisco Text Heavy Italic=san_francisco_textHvIt;";
+    $custom_fonts .= "San Francisco Text Light=san_francisco_textlight;";
+    $custom_fonts .= "San Francisco Text Light Italic=san_francisco_textLtIt;";
+    $custom_fonts .= "San Francisco Text Medium=san_francisco_textmedium;";
+    $custom_fonts .= "San Francisco Text Medium Italic=san_francisco_textMdIt;";
+    $custom_fonts .= "San Francisco Text Regular=san_francisco_textregular;";
+    $custom_fonts .= "San Francisco Text Italic=san_francisco_textitalic;";
+    $custom_fonts .= "San Francisco Text SemiBold=san_francisco_textsemibold;";
+    $custom_fonts .= "San Francisco Text SemiBold Italic=san_francisco_textSBdIt;";
     $init['font_formats'] = $font_formats . $custom_fonts;
 
     return $init;
